@@ -1,0 +1,130 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./css/birth.css">
+<link rel="stylesheet" href="./css/home.css">
+<link rel="stylesheet" href="./css/con.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="container con col-md-12" id="container">
+  <h3 class="col-md-12" style="color: #de5da4;">HAPPY BIRTHDAY 💖BAE💖</h3>
+  <h3 class="col-md-12" id="reward"></h3>
+  <h3 class="col-md-12" id="score"></h3>
+  <h3 class="col-md-12" id="mistake"></h3>
+  <p id="skip"></p>
+</div>
+<div style="text-align: center;">
+<button type="submit" class="btn default" onclick="restart()">RESTART</button> 
+</div>
+<b>
+</b>
+<ul>
+
+  <li>
+
+    <div id="dog" class="birth">
+      <code></code>
+      <text>
+        <!-- <h2>Cute Dog</h2> -->
+        <img src="./img/namegif.com_cd889.jpg" width="200" height="200" alt="Placeholder">
+        <p>
+          Happy Birthday my baby.This day is your day.
+        </p>
+        <a href="#baby">LOVE YOU</a>
+      </text>
+    </div>
+
+  </li>
+
+  <li>
+
+    <div id="city" class="birth">
+      <code></code>
+      <text>
+        <!-- <h2>Cute Dog</h2> -->
+        <img src="./img/lfood.jpg" width="200" height="200" alt="Placeholder">
+        <p>
+          Happy birthday to the best girlfriend in the world. Love you forever!
+        </p>
+        <a href="#baby">LOVE YOU</a>
+      </text>
+    </div>
+
+  </li>
+
+  <li>
+
+    <div id="flower" class="birth">
+      <code></code>
+      <text>
+        <!-- <h2>Cute Dog</h2> -->
+        <img src="./img/aaaaaaa.jpg" width="200" height="200" alt="Placeholder">
+        <p>
+          Baby Do you really need to light those condles on your cake? You've already set my heart on fire!
+        </p>
+        <a href="#baby">LOVE YOU</a>
+      </text>
+    </div>
+
+  </li>
+
+  <li>
+
+    <div id="arctic" class="birth">
+      <code></code>
+      <text>
+        <!-- <h2>Cute Dog</h2> -->
+        <img src="./img/ring.jpg" width="200" height="200" alt="Placeholder">
+        <p>
+          You are the best thing that has happened in my life!
+        </p>
+        <a href="#baby">LOVE YOU</a>
+      </text>
+    </div>
+
+  </li>
+
+</ul>
+
+<i>Made by your 💖</i>
+<script type="text/javascript" src="./js/quiz.js"></script>
+<script type="text/javascript">
+var user_name = localStorage.getItem("user_name");
+var skip = localStorage.getItem("skip");
+var score = localStorage.getItem("score");
+var mistake = localStorage.getItem("mistake");
+
+var total = parseInt(myQuestions.length/2 + 1) <= score;
+
+if (total) {
+    var reward = `Congratulations`
+    document.getElementById('reward').style.color = 'green';
+    // document.getElementById('container').style.background = "url(./img/celebration.gif) no-repeat left";
+}else{
+    var reward = `Please try better, ${user_name}.<br> You failed.`
+    document.getElementById('reward').style.color = 'red';
+    // document.getElementById('container').style.background = "url(./img/exam-mr-bean.gif) no-repeat left";
+}
+
+document.getElementById('score').innerHTML = `You got ${score} correct answers.`;
+document.getElementById('score').style.color = 'limegreen'
+
+document.getElementById('mistake').innerHTML = `You got ${mistake} wrong answers.`;
+document.getElementById('mistake').style.color = 'red'
+
+// document.getElementById('skip').innerHTML = `You skipped ${skip} question(s).`;
+// document.getElementById('skip').style.color = 'orange'
+
+document.getElementById('reward').innerHTML = reward;
+
+
+function restart() {
+    localStorage.clear();
+    location.href= "home.html";
+}
+</script>

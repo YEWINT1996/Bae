@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/home.css">
+    <title>Award Page</title>
+</head>
+<body class="final">
+    <!--AWARD & POINTS-->
+    <div class="container" id="container" style="text-align: right;">
+        <h1 id="reward"></h1>
+        <h2 id="score"></h2>
+        <h2 id="mistake"></h2>
+        <h2 id="skip"></h2>
+    </div>
+    <div style="text-align: center;">
+    <button type="submit" class="btn default" onclick="restart()">RESTART</button> 
+    </div>
+    
+
+<script type="text/javascript" src="./js/quiz.js"></script>
+<script type="text/javascript">
+var user_name = localStorage.getItem("user_name");
+var skip = localStorage.getItem("skip");
+var score = localStorage.getItem("score");
+var mistake = localStorage.getItem("mistake");
+
+var total = parseInt(myQuestions.length/2 + 1) <= score;
+
+if (total) {
+    var reward = `Congratulations, ${user_name}.`
+    document.getElementById('reward').style.color = 'green';
+    document.getElementById('container').style.background = "url(./img/celebration.gif) no-repeat left";
+}else{
+    var reward = `Please try better, ${user_name}.<br> You failed.`
+    document.getElementById('reward').style.color = 'red';
+    document.getElementById('container').style.background = "url(./img/exam-mr-bean.gif) no-repeat left";
+}
+
+document.getElementById('score').innerHTML = `You got ${score} correct answers.`;
+document.getElementById('score').style.color = 'limegreen'
+
+document.getElementById('mistake').innerHTML = `You got ${mistake} wrong answers.`;
+document.getElementById('mistake').style.color = 'red'
+
+document.getElementById('skip').innerHTML = `You skipped ${skip} question(s).`;
+document.getElementById('skip').style.color = 'orange'
+
+document.getElementById('reward').innerHTML = reward;
+
+
+function restart() {
+    localStorage.clear();
+    location.href= "home.html";
+}
+</script>
+</body>
+</html>

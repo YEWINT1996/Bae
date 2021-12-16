@@ -1,0 +1,425 @@
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: auto;
+}
+
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  overflow-y: hidden;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+b {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url(../img/25817.jpg);
+  background-position: center;
+  background-size: cover;
+  content: "";
+  width: 100%;
+  height: 100%;
+  /* filter: blur(8px); */
+}
+
+i {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  z-index: 10;
+  background: black;
+  color: #bbb;
+  font-style: initial;
+  font-size: 10pt;
+  padding: 10px;
+  border-radius: 0 0 0 12px;
+}
+
+@media screen and (max-width: 650px) {
+  i {
+    top: unset;
+    bottom: 0;
+  }
+}
+
+body::after {
+  /* position: fixed;
+  font-size: 16pt;
+  font-weight: 600;
+  top: 5%; */
+  /* left: 30px; */
+  /* content: "Hover over a Card! Don't forget the horizontal scroll bar!"; */
+  /* text-shadow: 1px 1px 0px black;
+  color: white;
+  font-family: "Signika", sans-serif;
+  transition: all 0.3s ease; */
+}
+
+body:hover::after {
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-height: 430px) {
+  body::after {
+    opacity: 0 !important;
+  }
+}
+
+ul {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-height: 700px) {
+  ul {
+    left: 80px;
+  }
+}
+
+@media screen and (min-height: 900px) {
+  ul {
+    left: 160px;
+  }
+}
+
+ul::after {
+  position: fixed;
+  bottom: 0;
+  left: -40px;
+  width: 150%;
+  height: 83%;
+  /* background: #888; */
+  /* border-top: 1px solid #ddd; */
+  transform-style: preserve-3d;
+  transition: all 0.4s ease-in-out;
+  content: "";
+}
+
+ul:hover::after {
+  transform: rotateX(90deg);
+  transition: all 0.4s ease-in-out;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  width: 400px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  transform-style: preserve-3d;
+  position: relative;
+  top: 20px;
+  transition: all 1s ease-in-out;
+}
+
+@media screen and (min-height: 900px) {
+  li {
+    width: 430px;
+  }
+}
+
+li:hover {
+  width: 450px;
+  transform: rotateZ(5deg) translateY(-15px);
+  transition: all 1s ease-in-out;
+}
+
+@media screen and (min-height: 700px) {
+  li:hover {
+    width: 530px;
+  }
+}
+
+@media screen and (min-height: 900px) {
+  li:hover {
+    width: 580px;
+  }
+}
+
+div.birth {
+  filter: brightness(0.9);
+  width: 260px;
+  height: 370px;
+  border-radius: 15px;
+  background: #b991bf;
+  border: 1px solid #666666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotateX(-50deg) rotateZ(40deg);
+  transform-style: preserve-3d;
+  box-shadow: 21px 26px 0px #333, -1px 0 28px 0 rgba(0, 0, 0, 0.1),
+    28px 28px 28px 0 rgba(0, 0, 0, 0.35);
+  z-index: 2;
+  transition: all 0.6s ease-in-out;
+}
+
+@media screen and (min-height: 700px) {
+  div.birth {
+    height: 500px;
+  }
+}
+
+@media screen and (min-height: 900px) {
+  div.birth {
+    height: 700px;
+  }
+}
+
+div.birth:hover {
+  transform: rotateX(0deg) rotateZ(0deg) translateZ(250px);
+  box-shadow: none;
+  filter: brightness(0.99);
+  border: 2px solid #66666600;
+  cursor: default;
+  transition: all 0.6s ease-in-out;
+}
+
+div.birth::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  content: "";
+  border-radius: 15px;
+  opacity: 0;
+  z-index: 0;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  transition: all 0.6s ease-in-out;
+}
+
+div.birth::after {
+  position: absolute;
+  width: 115%;
+  height: 111%;
+  top: -25px;
+  left: -25px;
+  content: "";
+  background: transparent;
+  pointer-events: none;
+  z-index: 2;
+  border: 5px dashed white;
+  transform: translateY(-250px) rotateZ(30deg);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 15px;
+  opacity: 0;
+  animation: border 6s linear infinite;
+  transition: all 0.7s ease-in-out;
+}
+
+div.birth:hover::after {
+  transform: none;
+  border: 5px dashed #a4cee5;
+}
+
+@media screen and (min-height: 700px) {
+  div.birth::after {
+    top: -30px;
+  }
+}
+
+@media screen and (min-height: 900px) {
+  div.birth::after {
+    top: -40px;
+  }
+}
+
+@keyframes border {
+  0% {
+    filter: invert(0%) contrast(160%) hue-rotate(0deg) brightness(1);
+  }
+  50% {
+    filter: invert(100%) contrast(100%) hue-rotate(170deg) brightness(2);
+  }
+  100% {
+    filter: invert(0%) contrast(160%) hue-rotate(0deg) brightness(1);
+  }
+}
+
+div.birth:hover::before,
+div.birth:hover::after {
+  /* opacity: 1; */
+  transition: all 0.7s ease-in-out;
+}
+
+code {
+  position: absolute;
+  top: -13px;
+  left: -3px;
+  width: 115%;
+  height: 111%;
+  background: transparent;
+  /* border-right: 8px solid white; */
+  /* border-top: 3px dashed white; */
+  border-radius: 15px;
+  pointer-events: none;
+  opacity: 1;
+  transition: all 0.9s ease-in-out;
+}
+
+div.birth:hover > code {
+  transform: rotateX(180deg) translateY(-10px);
+  top: -15px;
+  opacity: 0.7;
+  left: 0;
+  transition: all 0.9s ease-in-out;
+}
+
+code::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s linear;
+}
+
+text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 15px;
+  height: 100%;
+  position: relative;
+  bottom: 5px;
+}
+
+@media screen and (min-height: 700px) {
+  text {
+    justify-content: space-evenly;
+  }
+}
+
+h2 {
+  font-size: 22pt;
+  margin: 0 0 15px 0;
+  padding: 0;
+  color: #333;
+  text-decoration: 4px underline #ccc;
+  z-index: 5;
+  font-family: "IBM Plex Serif", serif;
+  transition: all 0.2s linear;
+}
+
+h2:hover {
+  text-decoration: 4px underline dodgerblue;
+  transition: all 0.2s linear;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+  border-radius: 15px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 20px -15px;
+  border: 2px solid white;
+  z-index: 5;
+  transition: all 0.4s ease-in-out;
+}
+
+img:hover {
+  filter: saturate(200%);
+  transition: all 0.4s ease-in-out;
+}
+
+div.birth:hover img {
+  box-shadow: none;
+  transition: all 0.4s ease-in-out;
+}
+
+p {
+  font-size: 11pt;
+  font-weight: 400;
+  line-height: 16pt;
+  color: #222;
+  text-align: center;
+  width: 80%;
+  padding: 0;
+  margin: 17px 0px;
+  font-family: "Signika", sans-serif;
+}
+
+a {
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #87735a;
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  width: 55%;
+  height: 35px;
+  opacity: 0.8;
+  border: 1px solid #666;
+  z-index: 3;
+  font-family: "Signika", sans-serif;
+  transition: all 0.4s ease-in-out;
+}
+
+a:hover {
+  opacity: 1;
+  background: rgb(233, 20, 101);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  letter-spacing: 1px;
+  transform: translateY(-5px);
+  border: 1px solid #eee;
+  transition: all 0.4s ease-in-out;
+}
+
+a:focus {
+  transform: scale(0.9);
+  box-shadow: none;
+  transition: all 0.4s ease-in-out;
+}
+
+code{
+  background-color: #b991bf!important;
+}
